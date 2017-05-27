@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>暗链详情</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="../static/css/mui.img.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/dark-detail.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			暗链详情
+		</div>
+	</div>
+
+
+	<!--内容区-->
+<div class="info" v-cloak>
+	<!--最新处理-->
+  <div class="tool" @click="goStep">
+    <h1 v-text="data.stepList[0]?data.stepList[0].cljg:''"></h1>
+    <p v-if="data.stepList[0] && data.stepList[0].clsj">{{(data.stepList[0]?data.stepList[0].clsj: '') | date('yyyy-MM-dd hh:mm:ss')}}</p>
+  </div>
+		<div class="leak">
+			<h1>暗链信息</h1>
+			<h2>漏洞所在页：<span class="blue">{{data.hidPageurl}}</span></h2>
+			<h2>暗链类型：<span class="rank">{{data.hidType}}</span></h2>
+			<h3>抓图取证</h3>
+			<h2><img :src="data.forensicImg" data-preview-src=""/></h2>
+
+
+		</div>
+		<div class="leak">
+			<h1>基本信息</h1>
+			<h2>网站名称：<span>{{data.websiteName}}</span></h2>
+			<h2>网站域名：<span>{{data.hidDomain}}</span></h2>
+			<h2>业主单位：<span>{{data.yzdw}}</span></h2>
+			<h2>网站负责：<span>{{data.fzr}}&nbsp;&nbsp;<a :href="'tel:' + data.phone" class="tel">{{data.phone}}</a></span></h2>
+			<h2>邮箱地址：<span>{{data.email}}</span></h2>
+		</div>
+</div>
+</div>
+
+
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/skin/mui.previewimage.js"></script>
+<script src="../static/js/skin/mui.zoom.js"></script>
+<!--<script src="../static/js/mui.preview.js"></script>-->
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/third/store.min.js"></script>
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/util/http.js"></script>
+<script src="../static/js/util/util.js"></script>
+<script src="../static/js/dark-detail.js"></script>
+</body>
+</html>

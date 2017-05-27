@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>中断详情</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/leak-detail.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			中断详情
+		</div>
+	</div>
+
+	<!--内容区-->
+<div class="info" v-cloak>
+	<!--最新处理-->
+  <div class="tool" @click="goStep">
+    <h1 v-text="data.stepList[0]?data.stepList[0].cljg:''"></h1>
+    <p v-if="data.stepList[0] && data.stepList[0].clsj">{{(data.stepList[0]?data.stepList[0].clsj: '') | date('yyyy-MM-dd hh:mm:ss')}}</p>
+  </div>
+		<div class="leak">
+			<h1>中断信息</h1>
+			<h2>可能原因：<span>{{data.usDescription}}</span></h2>
+			<h2>发现时间：<span>{{data.usHappenedTime | date('yyyy-MM-dd hh:mm:ss')}}</span></h2>
+			<!--已完成显示-->
+			<div id="fixed" style="display: none;">
+				<h2>修复时间：<span>{{data.usFinshedTime | date('yyyy-MM-dd hh:mm:ss')}}</span></h2>
+				<h2>中断时长：<span>{{((data.usFinshedTime || 0) - (data.usHappenedTime || 0)) / 1000}}s</span></h2>
+			</div>			
+		</div>
+		<div class="leak">
+			<h1>基本信息</h1>
+			<h2>网站名称：<span>{{data.websiteName}}</span></h2>
+			<h2>网站域名：<span>{{data.usDomain}}</span></h2>
+			<h2>业主单位：<span>{{data.yzdw}}</span></h2>
+			<h2>网站负责：<span>{{data.fzr}}&nbsp;&nbsp;<a :href="'tel:' + data.phone" class="tel">{{data.phone}}</a></span></h2>
+			<h2>邮箱地址：<span>{{data.mail}}</span></h2>
+		</div>
+</div>
+</div>
+
+
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+
+<script src="../static/js/third/store.min.js"></script>
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/util/http.js"></script>
+<script src="../static/js/util/util.js"></script>
+
+<script src="../static/js/break-detail.js"></script>
+</body>
+</html>

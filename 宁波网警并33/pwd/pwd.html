@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>修改密码</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/pwd.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">			
+		<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+			<div>
+				修改密码
+			</div>
+	</div>
+	<p class="yourmail">
+				请输入6-16位数字或字母，区分大小写
+	</p>
+	
+	<div class="box">
+		<span>原密码</span>
+		<input type="password" id="pwd" placeholder="请输入原密码" maxlength="16"/>
+	</div>
+	<div class="box">
+		<span>新密码</span>
+		<input type="password" id="aftpwd" placeholder="请输入新密码" maxlength="16"/>
+	</div>
+	<div class="save">
+		确认
+	</div>
+</div>	
+
+<!-- built files will be auto injected -->
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/layer.js"></script>
+<link rel="stylesheet" href="../static/js/skin/layer.css"/>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/pwd.js"></script>
+</body>
+</html>

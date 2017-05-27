@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>通报单详情</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/bulletin-detail.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">			
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			通报单详情
+		</div>			
+	</div>
+	
+	
+	<!--内容区-->
+<div class="info" id="info" v-cloak>
+	<div class="leak">
+		<h1>基本信息</h1>
+		<h2>网站名称：<span>{{websiteName}}</span></h2>
+		<h2>网站域名：<span>{{websiteUrl}}</span></h2>
+		<h2>业主单位：<span>{{yzdwName}}</span></h2>
+		<h2>网站负责：<span>{{fzrName}}&nbsp;&nbsp;<a v-bind:href='"tel:"+phone' class="tel">{{phone}}</a></span></h2>
+		<h2>邮箱地址：<span>{{mail}}</span></h2>
+	</div>
+	<div class="leak">
+		<h1 class="state">
+			<span>通报信息</span>
+			<!--<span>未完成</span>
+			<span>已完成</span>
+			<span>处理中</span>	-->
+			<!--<span>{{status}}</span>-->	
+		</h1>
+		<h2>执行网警：<span>{{wadw}}</span></h2>
+		<h2>提交时间：<span>{{billCreateDate}}</span></h2>			
+		<h2>整改时间：<span>{{billRectifyDate}}</span></h2>
+		<h2>流水号：<span>{{billDjhm}}</span></h2>
+
+		
+	</div>
+	<div class="leak"><!--v-bind:src="newsPic"--> 
+		<p onclick="clicked(url)">			
+			<span>
+				漏洞<i>{{vul}}</i>个，
+				暗链<i>{{leak}}</i>个，
+				DNS劫持<i>{{dns}}</i>次
+			</span>
+		</p>
+	</div>
+	<div class="leak msg">
+		<h2>通报内容：{{cfName}}
+		</h2>
+	</div>
+</div>
+</div>
+
+
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+	<script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/bulletin-detail.js"></script>
+</body>
+</html>

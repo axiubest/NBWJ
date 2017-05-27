@@ -1,0 +1,40 @@
+{
+
+		"page": 1,
+		"pageSize": 30,
+		"rows": [
+			{
+				"cols": {
+					"id": 8,
+					"news_abstract": "摘要1",
+					"news_title": "标题1",
+					"publishDate": "2017-01-01",
+					"publishDate_str": "2017-01-01 00:00:00",
+					"readstate": 0
+				},
+				"id": 8
+			}, {
+				"cols": {
+					"id": 9,
+					"news_abstract": "摘要2",
+					"news_title": "标题2",
+					"publishDate": "2017-01-01",
+					"publishDate_str": "2017-01-01 10:00:00",
+					"readstate": 0
+				},
+				"id": 9
+			}, {
+				"cols": {
+					"id": 10,
+					"news_abstract": "摘要3",
+					"news_title": "标题3",
+					"publishDate": "2017-01-01",
+					"publishDate_str": "2017-01-01 12:00:00",
+					"readstate": 0
+				},
+				"id": 10
+			}
+		],
+		"total": 3
+
+}

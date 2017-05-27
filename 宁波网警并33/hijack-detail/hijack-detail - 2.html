@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>DNS劫持详情</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/leak-detail.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">			
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			DNS劫持详情
+		</div>			
+	</div>
+	
+	<!--内容区-->
+<div class="info" id="info">
+	<!--最新处理-->
+		<div class="tool" id="../tooling/tooling.html" onclick="clicked(this.id)">
+			<h1>{{cljg}}</h1>
+			<p>{{clsj | date('yyyy-MM-dd hh:mm:ss')}}</p>
+		</div>
+		<div class="leak">
+						<h1>DNS劫持信息</h1>
+			<h2>劫持地址：<span class="blue">{{dnsHjdns}}</span></h2>
+			<h2>原始地址：<span class="blue">{{dnsDomain}}</span></h2>
+			<h2>发现时间：<span>{{dnsHappenedTime | date('yyyy-MM-dd hh:mm:ss')}}</span></h2>
+		</div>
+		<div class="leak">
+			<h1>基本信息</h1>
+			<h2>网站名称：<span>{{websiteName}}</span></h2>
+			<h2>网站域名：<span>{{websiteUrl}}</span></h2>
+			<h2>业主单位：<span>{{yzdwName}}</span></h2>
+			<h2>网站负责：<span>{{fzrName}}&nbsp;&nbsp;<a v-bind:href='"tel:"+phone' class="tel">{{phone}}</a></span></h2>
+			<h2>邮箱地址：<span>{{mail}}</span></h2>
+		</div>
+</div>
+</div>
+
+
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/third/store.min.js"></script>
+<script src="../static/js/util/http.js"></script>
+<script src="../static/js/util/util.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<!--<script src="../static/js/hijack-detail.js"></script>-->
+<script type="text/javascript">
+//http://192.168.227.1:8020/%E5%AE%81%E6%B3%A2%E7%BD%91%E8%AD%A6%E5%B9%B633/hijack-detail/hijack-detail%20-%202.html?bill_id=373&isHis=0
+var billId='';var isHis='';
+isHis=getQueryString("isHis");
+billId=getQueryString("bill_id");
+var app1=new Vue({ 
+    el: "#info",
+    data: {
+    	cljg:"",
+    	clsj:"",
+    	websiteUrl:"",
+        websiteName: "",
+        yzdwName:"",
+        fzrName:"",
+        phone:"",
+        mail:"",
+        
+        //后加
+        dnsHjdns:'',
+        dnsDomain:'',
+        dnsHappenedTime:'',
+
+    }
+})
+
+//jquery加载数据
+function load(){	
+//获取数据
+http.post('/mobile/dns/detail.html',{dnsId: billId, isHis: isHis}).done(function(data) {
+	console.log(data);
+app1.cljg=data.stepList[0].cljg;
+app1.clsj=data.stepList[0].clsj;
+app1.websiteUrl=data.data.websiteDns;
+app1.websiteName=data.data.websiteName;
+app1.yzdwName=data.data.yzdw;
+app1.fzrName=data.data.fzrName;
+app1.phone=data.data.phone;
+app1.mail=data.data.mail;
+app1.dnsHjdns=data.data.dnsHjdns;
+app1.dnsDomain=data.data.dnsDomain;
+app1.dnsHappenedTime=data.data.dnsHappenedTime;
+
+});
+
+}
+load();
+</script>
+</body>
+</html>

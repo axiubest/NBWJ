@@ -1,0 +1,27 @@
+.info .task span:nth-child(2){
+  background: url(../img/red.png) no-repeat !important;
+  background-size: 6px 6px !important;
+  background-position: 4px 40% !important;
+}
+.cross-info .task span:nth-child(2) {
+  background: url(../img/red.png) no-repeat;
+  background-size: 6px 6px;
+  background-position: 2px 40%;
+}
+/*.cross-info .task{
+  width:200px !important;right:
+}
+.cross-info .task span{width:25%;float: left;}
+.cross-info .task span:first-child {
+  margin-top: 0 !important;
+}*/
+.bullet{margin-top:-24px}
+.top_bar .top_menu > li:nth-child(3) > a {
+  color: #59ea73;
+}
+.top_bar .top_menu > li:nth-child(4) > a {
+  color: #fff;
+}
+.top_menu li:last-child img{
+	width:16px !important;
+}

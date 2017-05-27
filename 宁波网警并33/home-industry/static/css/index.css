@@ -1,0 +1,7 @@
+.top_menu li:last-child img{
+	width:16px !important;
+}
+.view li div{width:20% !important;}
+/*.content{
+	height:calc(100% - 115px)
+}*/

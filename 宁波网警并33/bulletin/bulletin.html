@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>通报</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+  <link rel="stylesheet" href="../static/css/dropload2.css">
+  <link rel="stylesheet" href="../static/css/dropfresh.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bulletin.css"/>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">			
+				<div>
+				通报
+			</div>			
+		</div>
+		<!--搜索-->
+		<button id="../bulletin-search/bulletin-search.html" onclick="clicked(this.id)">
+		<div class="search"></div>			
+		</button>		
+		<!--选择-->
+		<div class="slt">
+			<div class="slt-lt">
+					<span>区域</span>
+					<img src="./img/triangle.png"/>		
+			</div>
+			
+			<div class="slt-rt">
+				<span>未完成</span>
+				<img src="./img/triangle.png"/>
+			</div>
+		</div>
+		<!--内容区-->
+    <div class="info">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists bul">
+		    		<ul>
+		    			<!--<li>
+		    				<div>
+		    					<p class="flow">
+		    						<span>流水单号：201608081893</span>
+		    						<span>1012-09-09 12:12:12</span>
+		    					</p>
+		    					<h1><span>海曙区</span>浙江农林大学就业网11</h1>
+		    					<h2 class="blue" onclick="openUrl(this.textContent)">www.baidu.com</h2>		    					
+			    				<h3 class="addr-bul">
+			    					<p>业主单位：</p>
+			    					<span>浙江农林大学就中心</span>
+			    				</h3>
+			    				<div class="bul-p">
+			    					<p class="tel">
+			    						<span>鲁肃</span>
+			    						<a href="tel:18258037381" class="blue">18258037381</a>
+			    						<i>|</i>
+			    					</p> 			    					
+			    					<p class="bul-time" >
+			    						<span>整改时限</span>
+			    						<span>1212-12-05</span>
+			    					</p>
+		    					</div>
+		    				</div>	
+		    				<button id="../bulletin-search/bulletin-search.html" onclick="clicked(this.id)" class="cli-btn"></button>		    				
+		    			</li>-->
+
+		    				<!--<li>
+		    				<div>
+		    					<p class="flow">
+		    						<span>流水单号：201608081893</span>
+		    						<span>1012-09-09 12:12:12</span>
+		    					</p>
+		    					<h1><span>海曙区</span>浙江农林大学就业网11</h1>
+		    					<h2 class="blue" onclick="openUrl(this.textContent)">www.baidu.com</h2>		    					
+			    				<h3 class="addr-bul">
+			    					<p>业主单位：</p>
+			    					<span>浙江农林大学就中心</span>
+			    				</h3>
+			    				<div class="bul-p">
+			    					<p class="tel">
+			    						<span>鲁肃</span>
+			    						<a href="tel:18258037381" class="blue">18258037381</a>
+			    						<i>|</i>
+			    					</p> 			    					
+			    					<p class="bul-time" >
+			    						<span>整改时限</span>
+			    						<span>1212-12-05</span>
+			    					</p>
+		    					</div>
+		    				</div>	
+		    				<button id="../monitor-search/monitor-search.html" onclick="clicked(this.id)" class="cli-btn"></button>		    				
+		    			</li>-->
+
+		
+		    		</ul>
+    			</div>   			
+    </div>
+   </div>   
+  </div>  
+  </div>
+  <div class="nodata"><p>暂无数据</p></div>
+  
+<!--底部菜单-->
+<div class="top_bar" >
+    <ul class="top_menu" id="topmenu1">
+    <li> <a href="../index/index.html"><img src="./img/btn_home.png"><label>首页</label></a></li>
+    <li> <a href="../monitor/monitor.html"><img src="./img/btn_monitor.png"><label>监测</label></a></li>
+	<li> <a><img src="./img/btn_bulletin_sel.png"><label>通报</label></a></li>
+	<li> <a href="../total/total.html"><img src="./img/btn_statistics.png"><label>统计</label></a></li> 
+    </ul>
+      <ul class="top_menu" id="topmenu2" style="display: none;">
+    <li> <a id="../index/index.html" onclick="clicked2(this.id)"><img src="./img/btn_home.png"><label>首页</label></a></li>
+    <li> <a id="../monitor/monitor.html" onclick="clicked2(this.id)"><img src="./img/btn_monitor.png"><label>监测</label></a></li>
+	<li> <a id="../bulletin/bulletin.html" onclick="clicked2(this.id)"><img src="./img/btn_bulletin_sel.png"><label>通报</label></a></li>
+	<li> <a id="../total/total.html" onclick="clicked2(this.id)"><img src="./img/btn_statistics.png"><label>统计</label></a></li>
+    </ul>
+</div>  
+
+<!--选择弹窗--> 
+<!--地区-->
+<div class="cont-area">
+	<ul>
+		<li>全部</li>
+	</ul>
+</div>
+
+<!--处理-->
+<div class="cont-tool">
+	<ul>
+		<li class="active" onclick="states1()"><span>未完成</span></li>
+		<li onclick="states2()"><span>已完成</span></li>
+		<li onclick="states3()"><span>已过期</span></li>
+
+	</ul>
+</div>
+<div class="bg"></div>
+<div class="bg3"></div>
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/dropload.min.js"></script>
+	<script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script  src="../static/js/bulletin-pages.js"></script>
+<script src="../static/js/bulletin.js"></script>
+</body>
+</html>

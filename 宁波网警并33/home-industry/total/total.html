@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>通报单工作分析</title>
+  <link rel="stylesheet" href="../../static/css/reset.css"/>
+	<link rel="stylesheet" href="../../static/css/swiper.min.css"/>
+	<link rel="stylesheet" href="../../static/css/total.css"/>
+	<link rel="stylesheet" href="../static/css/total.css"/>
+</head>
+<body>
+<div id="app">
+<!--竖屏模式-->  	
+<div id="verticalScreen">
+<!--轮播-->
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<!--工作分析-->
+			<div class="header tot">
+				<div>
+					通报单工作分析
+				</div>
+			</div>
+			<!--选择-->
+			<!--<div class="slt">
+				<div class="slt-lt" id="slt1">
+					<span>按月统计</span>
+					<img src="./img/triangle.png" />
+				</div>
+				<div class="slt-rt" id="srt1">
+					<span></span>
+					<img src="./img/triangle.png" />
+				</div>
+			</div>-->
+			<div class="info">
+				<div class="task">
+					<span>已完成</span>
+					<span>已过期</span>
+					<span>完成率</span>
+					<img src="./img/row.png" class="cross1" />
+				</div>
+				<div class="session">
+					<div id="sheet1">
+						<h1>0</h1>
+						<p>已完成(张)</p>
+					</div>
+					<div id="overdue1">
+						<h1>0</h1>
+						<p>已过期(张)</p>
+					</div>
+					<div id="rate1">
+						<h1>0%</h1>
+						<p>完成率</p>
+					</div>
+				</div>
+				<div class="chart1" id="chart1">
+				</div>
+			</div>
+
+		</div>
+		<div class="swiper-slide">
+			<!--漏洞分析-->
+			<div class="header tot">
+				<div>
+					漏洞分析
+				</div>
+			</div>
+			<!--选择-->
+			<div class="slt">
+				<div class="slt-lt" id="slt2">
+					<span>按月统计</span>
+					<img src="./img/triangle.png" />
+				</div>
+				<div class="slt-rt" id="srt2">
+					<span></span>
+					<img src="./img/triangle.png" />
+				</div>
+			</div>
+			<!--内容-->
+			<div class="info leak">
+				<div class="task">
+					<span>高危漏洞</span>
+					<img src="./img/row.png" class="cross2"/>
+				</div>
+				<div class="top-leak">
+					<div>
+						<span>Top<i id="top"></i></span> 
+						<span id="topname"></span>						
+					</div>
+				</div>
+				<div class="session">
+					<div id="sheet2">
+						<h1>0</h1>
+						<p>涉及网站数量</p>
+					</div>
+					<div id="overdue2">
+						<h1>0</h1>
+						<p>发生次数</p>
+					</div>
+				</div>
+				<div class="chart2" id="chart2">
+				</div>
+			</div>
+		</div>
+		<div class="swiper-slide">
+			<!--DNS分析-->
+			<div class="header tot">
+				<div>
+					DNS劫持分析
+				</div>
+			</div>		
+			<div class="info dns">
+				<div class="weak">30天周期环比</div>
+				<div class="task">
+					<span>本周期</span>
+					<span class="yellow">上周期</span>
+					<img src="./img/row.png" class="cross3" />
+				</div>
+				<div class="session">
+					<div id="overdue3">
+						<h1>0</h1>
+						<p>本周期(次数)</p>
+					</div>
+					<div id="sheet3">
+						<h1>0</h1>
+						<p>上周期(次数)</p>
+					</div>
+				</div>
+				<div class="chart3" id="chart3">
+				</div>
+			</div>
+
+		</div>
+		<div class="swiper-slide">
+			<!--中断分析-->
+			<div class="header tot">
+				<div>
+					中断分析
+				</div>
+			</div>
+			<div class="info dns">
+				<div class="weak">30天周期环比</div>
+				<div class="task">
+					<span>本周期</span>
+					<span class="yellow">上周期</span>
+					<img src="./img/row.png" class="cross4" />
+				</div>
+				<div class="session">
+					<div id="sheet4">
+						<h1>0</h1>
+						<p>本周期(次数)</p>
+					</div>
+					<div id="overdue4">
+						<h1>0</h1>
+						<p>上周期(次数)</p>
+					</div>
+				</div>
+				<div class="chart4" id="chart4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 圆点 -->
+	<div class="swiper-pagination"></div>
+</div>
+
+<!--底部菜单-->
+<div class="top_bar">
+	<ul class="top_menu" id="topmenu1">
+		<li>
+			<a href="../index/index.html"><img src="./img/btn_home.png"><label>首页</label></a>
+		</li>
+		<li>
+			<a href="../monitor/monitor.html"><img src="./img/btn_monitor.png"><label>监测</label></a>
+		</li>
+		<li>
+			<a><img src="./img/btn_bulletin_sel.png"><label>统计</label></a>
+		</li>
+		<li>
+			<a href="../mine/mine.html"><img src="../mine/img/my_nor.png"><label>我的</label></a>
+		</li>
+	</ul>
+		<ul class="top_menu" id="topmenu2" style="display: none;">
+    <li> <a id="../index/index.html" onclick="clicked2(this.id)"><img src="./img/btn_home.png"><label>首页</label></a></li>
+    <li> <a id="../monitor/monitor.html" onclick="clicked2(this.id)"><img src="./img/btn_monitor.png"><label>监测</label></a></li>
+		<li> <a id="../total/total.html" onclick="clicked2(this.id)"><img src="./img/btn_statistics_sel.png"><label>统计</label></a></li>
+		<li> <a id="../mine/mine.html" onclick="clicked2(this.id)"><img src="./img/my_nor.png"><label>我的</label></a></li>
+  </ul>
+</div>
+
+<!--选择弹窗-->
+<!--工作分析-->
+<div class="cont-area" id='cont-area'>
+	<ul>
+		<li class="active" id="area-time1"><span>按月统计</span></li>
+		<li id="area-time2"><span>按季统计</span></li>
+		<li id="area-time3"><span>按年统计</span></li>
+	</ul>
+</div>
+<div class="cont-area" id='cont-leak'>
+	<ul>
+		<li class="active" id="area-time1"><span>按月统计</span></li>
+		<li id="area-time2"><span>按季统计</span></li>
+		<li id="area-time3"><span>按年统计</span></li>
+	</ul>
+</div>
+<!--漏洞分析-->
+<div class="cont-tool" id="cont-tool">
+	<ul id="time1">
+	</ul>
+	<ul id="time2" style="display: none;">
+
+	</ul>
+	<ul id="time3" style="display: none;">
+	</ul>
+</div>
+<div class="cont-tool" id="time-leak2">
+	<ul id="time4">
+
+	</ul>
+	<ul id="time5" style="display: none;">
+
+	</ul>
+	<ul id="time6" style="display: none;">
+	</ul>
+</div>
+<div class="bg"></div>
+<div class="bg3"></div>
+</div>  	
+
+<!--横屏模式-->
+<div id="crossScreen">
+	<div class="nTab">
+			<div class="TabTitle1">
+				<table id="tab">
+					<tr class="normal active" onclick="nTabs(tr0,0);chart5()" id="tr0">
+						<td>
+						<div>
+							<img src="./img/notification-sheet.png" class="tab-img"/>
+							<img src="./img/arrow.png" class="trigle"/>
+						</div>
+						<p>
+							通报单<br />工作分析
+						</p>
+						</td>
+						</tr>
+					<tr class="normal" onclick="nTabs(tr1,1);chart6()" id="tr1">
+						<td>
+						<div>
+							<img src="./img/loophole.png" class="tab-img"/>
+							<img src="./img/arrow.png" class="trigle"/>
+						</div>
+						<p>
+							漏洞分析
+						</p>
+						</td>
+					</tr>
+					<tr class="normal" onclick="nTabs(tr2,2);chart7()" id="tr2">
+						<td>
+						<div>
+							<img src="./img/dns.png" class="tab-img"/>
+							<img src="./img/arrow.png" class="trigle"/>
+						</div>
+						<p>
+							DNS<br />劫持分析
+						</p>
+						</td>
+					</tr>
+					<tr class="normal" onclick="nTabs(tr3,3);chart8()" id="tr3">
+						<td>
+						<div>
+							<img src="./img/interrupt.png" class="tab-img"/>
+							<img src="./img/arrow.png" class="trigle"/>
+						</div>
+						<p>
+							中断分析
+						</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+<!--通报单-->	
+<div id="tab0">
+	<div class="cross-info">
+		<div class="time">
+			<div class="time-total" id="cross-slt1">按月统计</div>
+			<div class="time-time"  id="cross-srt1">2016年12月</div>
+		</div>
+		<div class="data">
+			<div>
+				<span>已完成：</span>
+				<span id="sheet5">0</span>
+				<span>&nbsp;张</span>
+			</div>
+			<div>
+				<span>已过期：</span>
+				<span id="overdue5">0</span>
+				<span>&nbsp;张</span>
+			</div>
+			<div >
+				<span>完成率：</span>
+				<span id="rate5">0%</span>
+				<span>&nbsp;</span>
+			</div>
+		</div>
+		<div class="task bullet">
+			<span class="task-span">已完成</span>
+			<span>已过期</span>
+			<span>完成率</span>		
+		</div>
+		<div class="cross-chart" id="chart5">
+		</div>
+		<img src="./img/row.png" class="cross-img1" />
+	</div>
+</div>
+
+<!--漏洞-->	
+<div id="tab1" class="none">
+	<div class="cross-info">
+		<div class="time">
+			<div class="time-total" id="cross-slt2">按月统计</div>
+			<div class="time-time"  id="cross-srt2"></div>
+		</div>
+		<div class="data">
+
+					<span id="top-data">top<i id="top2"></i></span>
+				<span id="topname2"></span>		
+				<span><i id="top-i">，</i>涉及网站数量：</span>
+				<span id="sheet6"></span>
+				<span>次，发生</span>
+				<span id="overdue6">0</span>
+				<span>次</span>
+
+		</div>
+		<div class="task">
+			<span>&nbsp;</span><br />
+			<span>高危漏洞</span>		
+		</div>
+		<div class="cross-chart" id="chart6">
+		</div>
+		<img src="./img/row.png" class="cross-img2" />
+	</div>
+</div>
+<!--dns-->	
+<div id="tab2" class="none">
+	<div class="cross-info dns">
+		<div class="time">
+			<div class="time-total">30天周期环比</div>
+		</div>
+		<div class="data">
+			<div>
+				<span>本周期：</span>
+				<span id="sheet7">0</span>
+				<span>次</span>
+			</div>
+			<div>
+				<span>上周期：</span>
+				<span id="overdue7">0</span>
+				<span>次</span>
+			</div>
+		</div>
+		<div class="task">
+			<span>本周期</span>
+			<span class="yellow">上周期</span>		
+		</div>
+		<div class="cross-chart" id="chart7">
+		</div>
+		<img src="./img/row.png" class="cross-img3" />
+	</div>
+</div>
+<!--中断-->	
+<div id="tab3" class="none">
+	<div class="cross-info dns">
+		<div class="time">
+			<div class="time-total">30天周期环比</div>
+		</div>
+		<div class="data">
+			<div>
+				<span>本周期：</span>
+				<span id="sheet8">0</span>
+				<span>次</span>
+			</div>
+			<div>
+				<span>上周期：</span>
+				<span id="overdue8">0</span>
+				<span>次</span>
+			</div>
+		</div>
+		<div class="task">
+			<span>本周期</span>
+			<span class="yellow">上周期</span>		
+		</div>
+		<div class="cross-chart" id="chart8">
+		</div>
+		<img src="./img/row.png" class="cross-img4" />
+	</div>
+</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+<!--不要vue加载慢-->
+<script src="../../static/js/jquery-1.9.0.min.js"></script>
+<script src="../../static/js/chart/highcharts.js"></script>
+  <script src="../../static/js/third/store.min.js"></script>
+  <script src="../../static/js/util/http.js"></script>
+<script src="../../static/js/mui.min.js"></script>
+<script src="../../static/js/common.js"></script>
+<script src="../../static/js/andriod.js"></script>
+<script src="../../static/js/swiper.min.js"></script>
+<!--<script src="../static/js/dropload.min.js"></script>-->
+<script src="../../static/js/total-day.js"></script>
+<script src="../../static/js/total.js"></script>
+<script src="../static/js/total-data.js"></script>
+<script src="../static/js/total-chart.js"></script>
+</body>
+</html>

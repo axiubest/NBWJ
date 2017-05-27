@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>漏洞详情</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/leak-detail.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			漏洞详情
+		</div>
+	</div>
+
+
+	<!--内容区-->
+<div class="info" v-cloak>
+	<!--最新处理-->
+		<div class="tool" @click="goStep">
+			<h1 v-text="data.stepList[0]?data.stepList[0].vusCljg:''"></h1>
+			<p v-if="data.stepList[0] && data.stepList[0].vusClsj">{{(data.stepList[0]?data.stepList[0].vusClsj: '') | date('yyyy-MM-dd hh:mm:ss')}}</p>
+		</div>
+		<div class="leak">
+			<h1>漏洞信息</h1>
+			<h2>漏洞名称：<span>{{data.vul.vulName}}</span></h2>
+			<h2>漏洞地址：<span class="blue">{{data.vul.vulUrl}}</span></h2>
+			<h2>漏洞等级：<span class="rank">{{data.vul.vulDangerLevel}}</span></h2>
+			<h2>发现时间：<span>{{data.vul.vulHappenedTime | date('yyyy-MM-dd hh:mm:ss')}}</span></h2>
+			<p @click="goDesc">漏洞描述</p>
+			<p @click="goSugest">修复建议</p>
+			<!--<p @click="goDesc">{{data.vul.vulDescription}}</p>
+			<p @click="goSugest">{{data.vul.vulSuggest}}</p>-->
+		</div>
+		<div class="leak">
+			<h1>基本信息</h1>
+			<h2>网站名称：<span>{{data.vul.websiteName}}</span></h2>
+			<h2>网站域名：<span>{{data.vul.vulDomain}}</span></h2>
+			<h2>业主单位：<span>{{data.vul.yzdw}}</span></h2>
+			<h2>网站负责：<span>{{data.vul.fzr}}&nbsp;&nbsp;<a v-bind:href='"tel:"+data.vul.phone' class="tel">{{data.vul.phone}}</a></span></h2>
+			<h2>邮箱地址：<span>{{data.vul.mail}}</span></h2>
+		</div>
+</div>
+</div>
+
+
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+
+<script src="../static/js/third/store.min.js"></script>
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/util/http.js"></script>
+<script src="../static/js/util/util.js"></script>
+
+<script src="../static/js/leak-detail.js"></script>
+</body>
+</html>

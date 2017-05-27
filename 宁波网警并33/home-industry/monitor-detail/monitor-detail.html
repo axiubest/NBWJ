@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>通报任务单</title>
+  <link rel="stylesheet" href="../../static/css/reset.css"/>
+	<link rel="stylesheet" href="../../static/css/monitor-detail.css"/>
+	<link rel="stylesheet" href="../../static/css/mobiscroll.2.13.2.min.css"/>
+	<link rel="stylesheet" href="../static/css/monitor-detal.css"/>
+
+</head>
+<body>
+<div id="app">
+<div class="header">			
+		<a onclick="mui.back()"><span class="rtn"></span>
+			<span class="rtn-text">返回</span></a>
+			<div>
+			通报任务单
+		</div>			
+	</div>	
+	<!--内容区-->
+<div class="info" id="info" v-cloak>
+	<!--最新处理-->
+	<div class="leak">
+			<h1>基本信息</h1>
+			<h2>网站名称：<span>{{websiteName}}</span></h2>
+			<h2>网站域名：<span>{{websiteUrl}}</span></h2>
+			<h2>业主单位：<span>{{yzdwName}}</span></h2>
+			<h2>网站负责：<span>{{fzrName}}&nbsp;&nbsp;<a v-bind:href='"tel:"+phone' class="tel">{{phone}}</a></span></h2>
+			<h2>邮箱地址：<span>{{mail}}</span></h2>
+	</div>
+	<div class="leak threat">
+		<h1><span>网站威胁</span>
+			<span class="red"><i id="num2">{{all}}</i></span>	
+		</h1>
+		<p id="p1" onclick="right()">
+			<a id="right">
+				<span>漏洞</span>
+				<span>
+					<i id="num4">{{vul}}</i>
+				</span>
+			</a>
+		</p>
+		<p id="p2" onclick="right2()">
+			<a id="right2">
+				<span>暗链</span>
+				<span>
+					<i id="num6">{{leak}}</i>
+				</span>		
+			</a>
+		</p>
+		<p id="p3" onclick="right3()">
+			<a id="right3">
+				<span>DNS劫持</span>
+				<span>
+					<i id="num8">{{dns}}</i>
+				</span>
+			</a>
+		</p>
+	</div>
+</div>
+
+</div>
+<!--漏洞选择-->
+  <div class="leak-right">
+  	<div class="headers">			
+			<a class="bg-rt" id="leak-rt">
+				<span class="rtns"></span>
+				<span class="rtn-text bg-rt">返回</span>
+			</a>
+			<div>
+				漏洞
+			</div>				
+		</div>
+
+    <div class="info2">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists">
+		    		<ul class="leak-ul">
+		    			<!--<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check3" data-vulid="2"/>
+		    					<div id="../leak-detail/leak-detail.html" onclick="clicked(this.id)">	
+		    					<h1>浅谈时顶飞的飞af</h1>
+			    				<div class="state">
+			    					<span>低危</span>
+			    				</div><br />
+			    				<h2 class="log">打发</h2>
+			    				<h3>2016-08-02</h3>
+			    				</div>
+		    				</div>		
+		    			</li>
+		    			<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check3" data-vulid='3'/>
+		    					<div id="../leak-detail/leak-detail.html??bill_id=" onclick="clicked(this.id)">	
+		    					<h1>浅谈时顶飞的飞af</h1>
+			    				<div class="state">
+			    					<span>中危</span>
+			    				</div><br />
+			    				<h2 class="log">打发</h2>
+			    				<h3>2016-08-02</h3>
+			    				</div>
+		    				</div>		
+		    			</li>
+		    			<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check3" data-vulid='4'/>
+		    					<div id="../leak-detail/leak-detail.html??bill_id=" onclick="clicked(this.id)">	
+		    					<h1>浅谈时顶飞的飞af</h1>
+			    				<div class="state">
+			    					<span>中危</span>
+			    				</div><br />
+			    				<h2 class="log">打发</h2>
+			    				<h3>2016-08-02</h3>
+			    				</div>
+		    				</div>		
+		    			</li>-->
+		    		</ul>
+    			</div>
+    			
+    </div>
+   </div>   
+  </div>  
+  </div>
+<!--暗链选择-->
+  <div class="dark-right">
+  	<div class="headers">			
+			<a class="bg-rt" id="dark-rt">
+				<span class="rtns"></span>
+				<span class="rtn-text bg-rt">返回</span>
+			</a>
+			<div>
+				暗链
+			</div>				
+		</div>
+
+    <div class="info2 info3">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists">
+		    		<ul class="dark-ul">
+		    			<!--<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check4" data-darkid="55"/>
+		    					<div id="../dark-detail/dark-detail.html" onclick="clicked(this.id)">
+		    						<h1>http://www.baidu.com</h1>		    				
+			    				<h2 class="log">类型：赌博</h2>
+			    				<h3>2016-08-02</h3>
+		    					</div>		    							    				
+		    				</div>			    				
+		    			</li>
+		    			<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check4"  data-darkid="66"/>
+		    					<div id="../dark-detail/dark-detail.html" onclick="clicked(this.id)">
+		    						<h1>http://www.baidu.com</h1>		    				
+			    				<h2 class="log">类型：赌博</h2>
+			    				<h3>2016-08-02</h3>
+		    					</div>  				
+		    				</div>			    				
+		    			</li>-->
+		    		</ul>
+    			</div>
+    			
+    </div>
+   </div>   
+  </div>  
+  </div>
+<!--劫持选择-->
+  <div class="dns-right">
+  	<div class="headers">			
+			<a class="bg-rt" id="dns-rt">
+				<span class="rtns"></span>
+				<span class="rtn-text bg-rt">返回</span>
+			</a>
+			<div>
+				劫持
+			</div>				
+		</div>
+    <div class="info2 info3">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists">
+		    		<ul class="dns-ul">
+		    			<!--<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check5"  data-dnsid="77"/>
+		    					<div id="../hijack-detail/hijack-detail.html" onclick="clicked(this.id)">
+		    						<h1>劫持地址：192.168.1.1</h1>		    				
+			    				<h2 class="log">原IP：192.168.1.1</h2>
+			    				<h3>2016-08-02</h3>		
+		    					</div>		    				
+		    				</div>			    				
+		    			</li>
+		    			<li>	    				
+		    				<div>
+		    					<input type="checkbox" class="check5" data-dnsid="88"/>
+		    					<div id="../hijack-detail/hijack-detail.html" onclick="clicked(this.id)">
+		    						<h1>劫持地址：192.168.1.1</h1>		    				
+			    				<h2 class="log">原IP：192.168.1.1</h2>
+			    				<h3>2016-08-02</h3>		
+		    					</div>		    				
+		    				</div>			    				
+		    			</li>-->
+		    		</ul>
+    			</div>
+    			
+    </div>
+   </div>   
+  </div>  
+  </div>    
+<!--弹窗-->
+<div class="bg"></div>
+<div class="content">
+	<span class="close">取消</span>
+	<div>请选择</div>
+	<ul class="ul">
+		<!--<li>213214132413</li>-->
+	</ul>
+</div>
+
+<script src="../../static/js/vue.min.js"></script>
+<script src="../../static/js/jquery-1.9.0.min.js"></script>
+<script src="../../static/js/third/store.min.js"></script>
+<script src="../../static/js/layer.js"></script>
+<link rel="stylesheet" href="../../static/js/skin/layer.css"/>
+<script src="../../static/js/util/http.js"></script>
+<script src="../../static/js/mobiscroll.2.13.2.min.js"></script>
+<script src="../../static/js/mui.min.js"></script>
+<script src="../../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../../static/js/monitor-detail.js"></script>
+<script src="../static/js/monitor-detail-data.js"></script>
+</body>
+</html>

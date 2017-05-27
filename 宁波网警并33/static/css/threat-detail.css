@@ -1,0 +1,72 @@
+html,
+body {
+  height: 100%;
+}
+.header {
+  height: 70px;
+  background: #0e1020;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+}
+.rtn {
+  width: 11px;
+  height: 17px;
+  background: url(../img/rtn-1.png) no-repeat;
+  background-size: 11px 17px ;
+  position: absolute;
+  top: 42px;
+  left: 1em;
+  z-index: 2222;
+}
+.header > a {
+  float: left;
+  font-size: 14px;
+  color: #fff;
+  z-index: 2222;
+}
+.header > div {
+  position: relative;
+  top: 30px;
+}
+.rtn-text {
+  position: absolute;
+  left: 2em;
+  top: 30px;
+  z-index: 2222;
+}
+.info {
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.8em;
+  text-align: justify;
+  position: absolute;
+  height: calc(100% - 70px);
+  top: 70px;
+  left: 3%;
+  overflow-y: auto;
+  width: 94%;
+}
+.info div {
+  padding: 15px 0 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.info h1 {
+  font-size: 18px;
+  color: #000;
+}
+.info p {
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+}
+.info h2 {
+  line-height: 200%;
+  font-size: 14px;
+}
+.info img {
+  width: 100%;
+  height: 150px;
+}

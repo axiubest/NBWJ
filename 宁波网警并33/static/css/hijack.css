@@ -1,0 +1,226 @@
+html,
+body {
+  height: 100%;
+}
+.header {
+  height: 70px;
+  background: #0e1020;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+}
+.rtn {
+  width: 11px;
+  height: 17px;
+  background: url(../img/rtn-1.png) no-repeat;
+  background-size: 11px 17px ;
+  position: absolute;
+  top: 42px;
+  left: 1em;
+  z-index: 2222;
+}
+.header > a {
+  float: left;
+  font-size: 14px;
+  color: #fff;
+  z-index: 2222;
+}
+.header > div {
+  position: relative;
+  top: 30px;
+}
+.rtn-text {
+  position: absolute;
+  left: 2em;
+  top: 30px;
+  z-index: 2222;
+}
+.slt {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: 0;
+  border-bottom: 1px solid #e5e5e5 ;
+  height: 36px;
+}
+.slt-lt,
+.slt-rt {
+  float: left;
+  width: 50%;
+  font-size: 13px;
+  line-height: 24px;
+  height: 22px;
+  margin-top: 7px;
+  text-align: center !important;
+  border-right: 1px solid #cecece;
+  box-sizing: border-box;
+}
+.slt-rt {
+  border: none;
+}
+.slt img {
+  width: 8px;
+  height: 5px;
+  position: relative;
+  top: -2px;
+}
+.search {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 40px;
+  right: 0.5em;
+  z-index: 1;
+  background: url(../img/search.png) no-repeat;
+  background-size: 20px 20px;
+}
+.info {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.8em;
+  text-align: justify;
+  position: absolute;
+  height: calc(100% - 107px);
+  top: 107px;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+}
+.info li {
+  max-height: 200px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+  padding: 5px 3% 5px 3%;
+  width: 100%;
+  box-sizing: border-box;
+  background: url(../img/rt-3.png) no-repeat;
+  background-position: 97% 50%;
+  background-size: 6px 10px;
+}
+.info li > div {
+  width: 97%;
+}
+.info h1 {
+  font-size: 16px;
+  color: #000;
+  width: auto;
+  float: left;
+  line-height: 150%;
+  max-width: calc(100% - 55px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.info h2,
+.info h3,
+.info h4 {
+  box-sizing: border-box;
+  padding-left: 18px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 180%;
+}
+.info h2 {
+  background: url(../img/ip@3x.png) no-repeat;
+  background-size: 10px 12px;
+  background-position: 0 4px;
+}
+.info h3 {
+  background: url(../img/icon_company.png) no-repeat;
+  background-size: 12px 12px;
+  background-position: 0 3px;
+}
+.info h4 {
+  background: url(../img/time.png) no-repeat;
+  background-size: 12px 12px;
+  background-position: 0 4px;
+}
+.state {
+  float: left;
+  width: auto;
+  color: #fff;
+}
+.state span {
+  padding: 2px 5px 2px 5px;
+  background: #1ebd96;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+.bg,
+.bg3 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 107px;
+  left: 0;
+  height: calc(100% - 107px);
+}
+.cont-area,
+.cont-threat,
+.cont-tool {
+  display: none;
+  z-index: 3;
+  width: 100%;
+  left: 0;
+  top: 107px;
+  position: absolute;
+  min-height: 50px;
+  background: #fff;
+}
+.cont-area ul li {
+  padding: 7px 5px;
+  font-size: 13px;
+  min-width: 25.5%;
+  float: left;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  margin: 12px 0 0 3%;
+  text-align: center;
+}
+.cont-area .active {
+  border: 1px solid #ff8a00;
+}
+.cont-threat ul li,
+.cont-tool ul li {
+  display: block;
+  padding: 15px 0 15px 30px;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.cont-threat .active,
+.cont-tool .active {
+  color: #ff8a00;
+  background: url(../img/gou.png) no-repeat;
+  background-size: 10px 10px;
+  background-position: 10px 16px;
+}
+.cont-area ul li:last-child {
+  margin-bottom: 12px;
+}
+.cont-tool i {
+  float: right;
+  padding-right: 20px;
+}
+.nodata {
+  position: fixed;
+  top: 107px;
+  left: 0px;
+  width: 100%;
+  height: calc(100% - 107px);
+  background: #e5e5e5;
+  font-size: 18px;
+  color: #8f8f8f;
+  z-index: 1;
+  text-align: center;
+  display: none;
+}
+.nodata p {
+  position: relative;
+  top: calc(50% - 20px);
+}

@@ -1,0 +1,68 @@
+html,body{height:100%;} 
+.header{height:70px;background: #0e1020;text-align: center;
+line-height: 40px;font-size: 18px;color:#fff;}
+.rtn{width:11px;height:17px;background: url(../img/rtn-1.png) no-repeat;
+background-size:11px 17px ;position: absolute;top:42px;left:1em;z-index: 2222;}
+.header>a{float:left;font-size:14px;color:#fff;z-index: 2222;}
+.header>div{position: relative;top:30px;}
+.rtn-text{position:absolute;left:2em;top:30px;z-index: 2222;}
+.info{font-size:14px;color:#6b6b6b;line-height:1.8em;
+text-align: justify;position:absolute;height:calc(~"100% - 110px");
+top:109px;left:0;overflow-y: auto;width: 100%;}
+.info li{max-height:110px;border-bottom: 1px solid #e5e5e5;text-align:left;
+padding: 10px 5% 10px 5%;width:100%;box-sizing: border-box;
+} 
+//.lists-li{border-top: 1px solid #e5e5e5;}
+.info li span:nth-child(1){font-size:16px;color:#000;float: left;width:70px;}
+.info li span:nth-child(2),.info li span:nth-child(3){font-size:16px;line-height: 150%;}
+.info li span:nth-child(3){color:#fa9300;text-align: right;float: right;
+font-size:18px;}
+.loading{color:#fff !important;font-size:14px}
+//tab页
+
+.nTab {
+    width: 100%;
+    height: auto;
+    border: 0px solid #333;
+    overflow: hidden;
+}
+.none {
+    display: none;
+}
+
+
+.TabTitle1 {
+    background: #fff;
+    height: 32px;
+
+    padding-bottom: 1px;
+    width: 100%;
+}
+.nTab .TabTitle1 .active {
+    border-bottom: 2px solid #fa6650;
+    color: #fa6650;
+    
+    height: 32px;
+}
+.nTab .TabTitle1 li {
+    float: left;
+    height: 26px;
+    line-height: 30px;
+    text-align: center;
+
+}
+
+.nTab .TabTitle1 .normal {
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+
+}
+.top{width:100%; background:#fff; border-bottom:1px solid #ccc;margin-bottom: 10px;  padding-top: 5px;}
+#Tab li{width:25%;font-size: 16px;}
+#Tab{width:100%}
+#Tab li div{width:1px;height:18px;background:#e5e5e5;float: right;margin-top:5px}
+.nodata{position:fixed;top:109px;left:0px;width:100%;height:calc(~"100% - 109px");
+background:#e5e5e5;font-size:18px;color:#8f8f8f;z-index: 1;text-align: center;
+display: none;}
+.nodata p{position:relative;top:calc(~"50% - 20px");}

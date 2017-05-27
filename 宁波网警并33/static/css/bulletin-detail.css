@@ -1,0 +1,144 @@
+html,
+body {
+  height: 100%;
+  background: #eff4f7;
+}
+.header {
+  height: 70px;
+  background: #0e1020;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+}
+.rtn {
+  width: 11px;
+  height: 17px;
+  background: url(../img/rtn-1.png) no-repeat;
+  background-size: 11px 17px ;
+  position: absolute;
+  top: 42px;
+  left: 1em;
+  z-index: 2222;
+}
+.header > a {
+  float: left;
+  font-size: 14px;
+  color: #fff;
+  z-index: 2222;
+}
+.header > div {
+  position: relative;
+  top: 30px;
+}
+.rtn-text {
+  position: absolute;
+  left: 2em;
+  top: 30px;
+  z-index: 2222;
+}
+.info {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.8em;
+  text-align: justify;
+  position: absolute;
+  height: calc(100% - 70px);
+  top: 70px;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+}
+.leak {
+  background: #fff;
+  margin-top: 10px;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  float: left;
+  width: 100%;
+}
+.leak h1,
+.leak h2,
+.leak > p {
+  width: 97%;
+  margin-left: 3%;
+  padding: 7px 3% 7px 0;
+  box-sizing: border-box;
+  float: left;
+}
+.leak h2,
+.leak > p {
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 14px;
+}
+.leak h1 {
+  font-size: 16px;
+  color: #000;
+}
+.leak h2:last-child,
+.leak p:last-child {
+  border: 0;
+}
+.leak span {
+  color: #000;
+  width: calc(100% - 75px);
+  float: right;
+  text-align: left;
+  word-break: break-all;
+}
+.leak a {
+  color: #0a57e5;
+}
+.leak .tel,
+.leak .blue {
+  color: #3770ff;
+}
+.leak .blue {
+  word-break: break-all;
+}
+.leak p {
+  background: url(../img/rt-3.png) no-repeat #fff;
+  background-position: 97% 50%;
+  background-size: 6px 10px;
+}
+.leak:first-child {
+  margin-top: 0;
+}
+.leak p span {
+  width: calc(100% - 15px);
+  float: left;
+}
+.leak p span i:nth-child(1) {
+  color: #0a57e5;
+}
+.leak p span i:nth-child(2) {
+  color: red;
+}
+.leak p span i:nth-child(3) {
+  color: #24c878;
+}
+.msg h2 {
+  word-break: break-all;
+}
+.state span {
+  padding: 0 5px 0 5px;
+  background: #1ebd96;
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+  border-radius: 3px;
+  width: auto;
+  color: #fff;
+  float: left;
+}
+.state span:first-child {
+  background: none;
+  color: #000;
+  font-size: 16px;
+  text-indent: -10px;
+  padding: 2px 5px 2px 5px;
+  position: static;
+}

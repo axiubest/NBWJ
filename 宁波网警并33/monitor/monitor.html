@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>监测</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+  <link rel="stylesheet" href="../static/css/dropload2.css">
+  <link rel="stylesheet" href="../static/css/dropfresh.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/monitor.css"/>
+	<style type="text/css">
+		.lists ul li{border-top-color: #E8EAEC;}
+	</style>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">			
+				<div>
+				监测
+			</div>			
+		</div>
+		<!--搜索-->
+		<button id="../monitor-search/monitor-search.html" onclick="clicked(this.id)">
+		<div class="search"></div>			
+		</button>
+
+		<!--选择-->
+		<div class="slt">
+			<div class="slt-lt">
+					<span>区域</span>
+					<img src="./img/triangle.png"/>		
+			</div>
+			<div class="slt-ct">
+				<span>行业主管</span>
+				<img src="img/triangle.png"/>
+			</div>
+			<div class="slt-rt">
+				<span>漏洞数量</span>
+				<img src="./img/triangle.png"/>
+			</div>
+		</div>
+		<!--内容区-->
+    <div class="info">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists">
+		    		<ul>
+		    			<!--<li>		    					
+		    					<h2>网信办<span>镇海区</span></h2>
+		    					<h1>浙江农林大学就业网</h1>
+		    					<h2>www.baidu.com</h2>
+		    					<p>
+		    						<span>漏洞</span>&nbsp;<span class="blue">3</span>
+		    						<span>暗链</span>&nbsp;<span class="red">3</span>
+		    						<span>DNS劫持</span>&nbsp;<span  class="green">3</span>
+		    						<span>中断</span>&nbsp;<span class="true">是</span>		    						
+		    					</p>
+			    				<h3 class="addr">业主单位：<span>浙江农林大学就业指导中心</span>
+			    					<button>通报</button>
+			    				</h3>
+		    			</li>
+		    			<li>		    					
+		    					<h2>网信办<span>镇海区</span></h2>
+		    					<h1>浙江农林大学就业网</h1>
+		    					<h2>www.baidu.com</h2>
+		    					<p>
+		    						<span>漏洞</span>&nbsp;<span class="blue">3</span>
+		    						<span>暗链</span>&nbsp;<span class="red">3</span>
+		    						<span>DNS劫持</span>&nbsp;<span  class="green">3</span>
+		    						<span>中断</span>&nbsp;<span class="true">否</span>		    						
+		    					</p>
+			    				<h3 class="addr"><p>业主单位：</p>
+			    					<span>浙江农林大学就业指导中心浙江农林大学就业指导中心</span>
+			    					<button class="none">通报</button>
+			    				</h3>
+		    			</li>-->
+		    			
+		
+		    		</ul>
+    			</div>
+    			
+    </div>
+   </div>   
+  </div>  
+  </div>
+  <div class="nodata"><p>暂无数据</p></div>
+  
+<!--底部菜单-->
+<div class="top_bar" >
+    <ul class="top_menu" id="topmenu1" >
+    <li> <a href="../index/index.html"><img src="./img/btn_home.png"><label>首页</label></a></li>
+    <li> <a><img src="./img/btn_monitor_sel.png"><label>监测</label></a></li>
+	<li> <a href="../bulletin/bulletin.html"><img src="./img/btn_bulletin.png"><label>通报</label></a></li>
+	<li> <a href="../total/total.html"><img src="./img/btn_statistics.png"><label>统计</label></a></li> 
+    </ul>
+        <ul class="top_menu" id="topmenu2" style="display: none;">
+    <li> <a id="../index/index.html" onclick="clicked2(this.id)"><img src="./img/btn_home.png"><label>首页</label></a></li>
+    <li> <a id="../monitor/monitor.html" onclick="clicked2(this.id)"><img src="./img/btn_monitor_sel.png"><label>监测</label></a></li>
+	<li> <a id="../bulletin/bulletin.html" onclick="clicked2(this.id)"><img src="./img/btn_bulletin.png"><label>通报</label></a></li>
+	<li> <a id="../total/total.html" onclick="clicked2(this.id)"><img src="./img/btn_statistics.png"><label>统计</label></a></li>
+    </ul>
+</div>  
+
+<!--选择弹窗--> 
+<!--地区-->
+<div class="cont-area">
+	<ul>
+		<li>全部</li>
+	</ul>
+</div>
+<!--主管-->
+<div class="cont-threat">
+	<ul>
+		<li class="active">全部</li>
+
+	</ul>
+</div>
+<!--处理-->
+<div class="cont-tool">
+	<ul>
+		<li class="active" onclick="states1()"><span>漏洞数量</span></li>
+		<li onclick="states2()"><span>暗链数量</span></li>
+		<li onclick="states3()"><span>DNS劫持数量</span></li>
+		<li onclick="states4()"><span>中断</span></li>
+	</ul>
+</div>
+<div class="bg"></div>
+<div class="bg2"></div>
+<div class="bg3"></div>
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/dropload.min.js"></script>
+<script  src="../static/js/monitor-pages.js"></script>
+<script src="../static/js/monitor.js"></script>
+<script type="text/javascript">
+ 
+//$.ajax({
+//  type: 'get',
+////  url: 'http://192.168.1.27:8080/mobile/desktop/queryWeblist.html?page='+page+'&size='+size+'&token=3822d6d56c7a4dfe3e9d7b1b7ff5043e',
+//url:'http://192.168.1.27:8080/mobile/desktop/billlist.html?token=41d38d98603b21f7f35e049bc9519ad4',
+//  dataType: 'json',
+//  success: function(data){
+//  	console.log(data);
+//      // 为了测试，延迟1秒加载
+//
+//  },
+//  error: function(xhr, type){
+////      alert('Ajax error!');
+//
+//      // 即使加载出错，也得重置
+//
+//  }
+//});     	
+</script>
+</body>
+</html>

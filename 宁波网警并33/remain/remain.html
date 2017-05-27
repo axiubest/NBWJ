@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>遗留问题统计</title>
+  <link rel="stylesheet" href="../static/css/reset.css"/>
+  <link rel="stylesheet" href="../static/css/dropload2.css">
+<link rel="stylesheet" href="../static/css/dropfresh.css">
+	<link rel="stylesheet" href="../static/css/remain.css"/>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">			
+			<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+				<div>
+				30天遗留问题统计
+			</div>
+		</div>
+<!--tab页-->		
+<div class="product_main">
+	<div class="nTab">
+		<div class="top">
+			<div class="TabTitle1">
+				<ul id="Tab">
+					<li class="active" onclick="nTabs(this,0);">高危漏洞<div></div></li>
+					<li class="normal" onclick="nTabs(this,1);">暗链<div></div></li>
+					<li class="normal" onclick="nTabs(this,2);">DNS劫持<div></div></li>
+					<li class="normal" onclick="nTabs(this,3);">中断</li>
+				</ul>
+			</div>
+		</div>		
+		
+		
+<div class="info">
+	<div class="outer">
+		<div class="inner">
+			<!--高危漏洞-->
+			<div id="Tab0" style="display: block;">
+				<ul class="lists">
+					<!--<li class="lists-li">
+						<span>01</span>
+						<span>海曙区</span>
+						<span id="high">29</span>
+					</li>
+					<li>
+						<span>02</span>
+						<span>江北区</span>
+						<span id="dark">19</span>
+					</li>
+					-->
+				</ul>
+				<div class="nodata"><p>暂无数据</p></div>
+			</div>
+
+			<!--暗链-->
+			<div id="Tab1" class="none">
+				<ul class="lists">
+					<!--<li class="lists-li">
+						<span>01</span>
+						<span>高危漏洞</span>
+						<span id="high">29</span>
+					</li>				
+						<span>04</span>
+						<span>中断</span>
+						<span id="break">39</span>
+					</li>-->
+
+				</ul>
+				<div class="nodata"><p>暂无数据</p></div>
+
+			</div>
+
+			<!--DNS劫持-->
+
+			<div id="Tab2" class="none">
+				<ul class="lists">
+					<!--<li class="lists-li">
+						<span>01</span>
+						<span>高危漏洞</span>
+						<span id="high">129</span>
+					</li>					
+					<li>
+						<span>04</span>
+						<span>中断</span>
+						<span id="break">139</span>
+					</li>-->
+
+				</ul>
+				<div class="nodata"><p>暂无数据</p></div>
+
+			</div>
+			<!--中断-->
+			<div id="Tab3" class="none">
+				<ul class="lists">
+					<!--<li class="lists-li">
+						<span>01</span>
+						<span>高危漏洞</span>
+						<span id="high">291</span>
+					</li>
+					<li>
+						<span>04</span>
+						<span>中断</span>
+						<span id="break">391</span>
+					</li>-->
+
+				</ul>
+					<div class="nodata"><p>暂无数据</p></div>
+			</div>
+
+		</div>
+
+	</div>   	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+          
+
+    </div>
+</div>	
+    		
+    		
+    		
+    		
+    		
+    </div>
+    
+  </div>
+  
+  
+  
+<!-- built files will be auto injected -->
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/dropload.min.js"></script>
+<script src="../static/js/tab.js"></script>
+<script src="../static/js/remain-pages.js"></script>
+<script  src="../static/js/remain.js"></script>
+</body>
+</html>

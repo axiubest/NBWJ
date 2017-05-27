@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>首页</title>
+  <link rel="stylesheet" href="../../static/css/reset.css"/>
+  <link rel="stylesheet" href="../../static/css/dropload.css">
+  <link rel="stylesheet" href="../../static/css/refresh.css"/>
+	<link rel="stylesheet" href="../../static/css/index.css"/>
+	<link rel="stylesheet" href="../static/css/index.css"/>
+</head>
+<body>
+<!--头部-->
+  	<div class="header">
+				<span>
+				首页
+			</span>
+		</div>
+
+	<!--内容区-->
+	<div class="content">
+    <div class="lists">
+    	<!--只刷新转盘-->
+    	<div class="row">
+    		<div class="row-lt" id="../leak/leak.html?threat=1" onclick="clicked(this.id)">
+    			 <div id="circle2" style="width: 95px;height: 95px;font-size: 30px;"></div>
+    			<div class="row-low">
+    				低危<span v-text="data.lowVul">0</span>
+    			</div>
+    		</div>
+    		<div class="row-ct" id="../leak/leak.html?threat=2" onclick="clicked(this.id)">
+   				 <div id="circle3" style="width: 120px;height: 120px;font-size: 40px;"></div>
+    			<div class="row-high">
+    				高危<span v-text="data.highVul">0</span>
+    			</div>
+    		</div>
+    		<div class="row-rt" id="../leak/leak.html?threat=3" onclick="clicked(this.id)">
+    			<div id="circle1" style="width: 95px;height: 95px;font-size: 30px;"></div>
+    			<div class="row-mid">
+    				中危<span v-text="data.middleVul">0</span>
+    			</div>
+    		</div>
+    	</div>
+    	<!--滑块-->
+    	<div class="slid">
+    		<a onclick="clicked('../dark/dark.html')">
+    		<div class="slid-lt">
+    			<h1 v-text="data.hiddenLink">0</h1>
+    			<p>暗链数</p>
+
+	          <div id="scrollBar">
+              <div id="scroll_Track" :style="{width: currentHiddenLinkWidth + 2 + 'px'}"></div>
+              <div id="scroll_Thumb" :style="{'margin-left': currentHiddenLinkWidth + 'px'}"></div>
+	          </div>
+	          <!--<p id="scrollBarTxt"></p>-->
+						<div class="slid-line"></div>
+    		</div>
+    		</a>
+    	<a onclick="clicked('../break/break.html')">
+    		<div class="slid-lt">
+    			<h1 v-text="data.usability">0</h1>
+    			<p>中断数</p>
+	          <div id="scrollBar2">
+	            <div id="scroll_Track2" :style="{width: currentUsabilityWidth + 2 + 'px'}"></div>
+	            <div id="scroll_Thumb2" :style="{'margin-left': currentUsabilityWidth + 'px'}"></div>
+	          </div>
+	          <div class="slid-line"></div>
+    		</div>
+    		</a>
+    		<a onclick="clicked('../hijack/hijack.html')">
+    		<div class="slid-lt">
+    			<h1 v-text="data.dnsHijack">0</h1>
+    			<p>劫持数</p>
+	          <div id="scrollBar3">
+              <div id="scroll_Track3" :style="{width: currentDnsWidth + 2 + 'px'}"></div>
+              <div id="scroll_Thumb3" :style="{'margin-left': currentDnsWidth + 'px'}"></div>
+	          </div>
+    		</div>
+    		</a>
+    	</div>
+    	<!--概览-->
+    	<div class="view">
+    		<p>概览</p>
+    		<ul>
+    			<li>
+    				<div>
+    					<p>网站</p>
+    					<img src="./img/icon_website.png"/>
+    					<p v-text="homeOverview.web">0</p>
+    				</div>
+    			</li>
+    			<li>
+    				<div>
+    					<p>单位</p>
+    					<img src="./img/icon_company.png"/>
+    					<p v-text="homeOverview.unit">0</p>
+    				</div>
+    			</li>
+    			<li>
+    				<div>
+    					<p>威胁</p>
+    					<img src="./img/icon_threaten.png"/>
+    					<p v-text="homeOverview.alert">0</p>
+    				</div>
+    			</li>
+    			
+    			<li>
+    				<div>
+    					<p>预警单</p>
+    					<img src="./img/icon_warning.png"/>
+    					<p v-text="homeOverview.yjCount">0</p>
+    				</div>
+    			</li>
+    			<li>
+    				<div>
+    					<p>通报单</p>
+    					<img src="./img/icon_bulletin1.png"/>
+    					<p v-text="homeOverview.disposal">0</p>
+    				</div>
+    			</li>
+    		</ul>
+    	</div>
+
+
+    </div>
+	</div>
+
+<!--底部菜单-->
+<div class="top_bar">
+	<ul class="top_menu" id="topmenu1">
+		<li>
+			<a><img src="./img/btn_home_sel.png"><label>首页</label></a>
+		</li>
+		<li>
+			<a href="../monitor/monitor.html"><img src="./img/btn_monitor.png"><label>监测</label></a>
+		</li>
+		<li>
+			<a href="../total/total.html"><img src="./img/btn_statistics.png"><label>统计</label></a>
+		</li>
+		<li>
+			<a href="../mine/mine.html"><img src="./img/my_nor.png"><label>我的</label></a>
+		</li>
+	</ul>
+	<ul class="top_menu" id="topmenu2" style="display: none;">
+    <li> <a id="../index/index.html" onclick="clicked2(this.id)"><img src="./img/btn_home_sel.png"><label>首页</label></a></li>
+    <li> <a id="../monitor/monitor.html" onclick="clicked2(this.id)"><img src="./img/btn_monitor.png"><label>监测</label></a></li>
+		<li> <a id="../total/total.html" onclick="clicked2(this.id)"><img src="./img/btn_statistics.png"><label>统计</label></a></li>
+		<li> <a id="../mine/mine.html" onclick="clicked2(this.id)"><img src="./img/my_nor.png"><label>我的</label></a></li>
+  </ul>
+</div>
+
+
+
+<!-- built files will be auto injected -->
+	<script src="../../static/js/vue.min.js"></script>
+	<script src="../../static/js/jquery-1.9.0.min.js"></script>
+	<script src="../../static/js/third/store.min.js"></script>
+	<script src="../../static/js/layer.js"></script>
+	<script src="../../static/js/util/http.js"></script>
+	<script src="../../static/js/util/ev.js"></script>
+	<script src="../../static/js/mui.min.js"></script>
+	<script src="../../static/js/common.js"></script>
+	<script src="../../static/js/dropload.js"></script>
+	<script src="../../static/js/circle-progress.js"></script>
+	<script src="../static/js/andriod.js"></script>
+	<script src="../static/js/index.js"></script>
+
+</body>
+</html>

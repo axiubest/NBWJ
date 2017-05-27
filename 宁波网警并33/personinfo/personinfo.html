@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>个人信息</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/personinfo.css"/>
+</head>
+<body>
+<div id="app">
+<div class="header">			
+		<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+			<div>
+				个人信息
+			</div>
+	</div>
+<div id="info" v-cloak>
+	<div class="box" id="../validate/validate.html?urlid=1" onclick="clicked(this.id)">
+		<span>手机号</span>
+		<span>{{user_phone}}</span>
+	</div>
+	<div class="box" id="mail">
+		<span>邮箱</span>
+		<span>{{user_mail}}</span>
+	</div>
+	<div class="box" id="../validate/validate.html?urlid=2" onclick="clicked(this.id)">
+		<span>修改登录密码</span>
+	</div>
+</div>
+
+</div>	
+
+<!-- built files will be auto injected -->
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/personinfo.js"></script>
+</body>
+</html>

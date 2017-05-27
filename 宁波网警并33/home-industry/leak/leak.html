@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>漏洞</title>
+  <link rel="stylesheet" href="../../static/css/reset.css"/>
+  <link rel="stylesheet" href="../../static/css/dropload2.css">
+  <link rel="stylesheet" href="../../static/css/dropfresh.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/leak.css"/>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">			
+			<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+				<div>
+				漏洞
+			</div>			
+		</div>
+		<!--搜索-->
+		<div class="search" id="../leak-search/leak-search.html" onclick="clicked(this.id)"></div>
+		<!--选择-->
+		<div class="slt">
+			<div class="slt-lt">
+					<span>区域</span>
+					<img src="./img/triangle.png"/>		
+			</div>
+			<div class="slt-ct">
+				<span>全部</span>
+				<img src="img/triangle.png"/>
+			</div>
+			<div class="slt-rt">
+				<span>未处理</span>
+				<img src="./img/triangle.png"/>
+			</div>
+		</div>
+		<!--内容区-->
+    <div class="info">
+    	<div class="outer">
+    		<div class="inner">
+    			<div class="lists">
+		    		<ul>
+		    			<!--<li>
+		    				<div id="1">
+		    					<h1>浅谈时顶顶顶顶是的飞的飞af是fsaf</h1>
+		    				<div class="state">
+		    					<span>低危</span><span>处理中</span>
+		    				</div><br />
+		    				<h2 class="log">打发打发安抚打发发发生发生
+		    				打发打发安抚打发发发生发生123</h2>
+		    				<h3 class="net">2016-08-02</h3>
+		    				<h4>2017-03-06 18:11:11</h4>
+		    				</div>	    				
+		    			</li>
+		    			-->
+		
+		    		</ul>
+    			</div>
+    			
+    </div>
+   </div>   
+  </div>  
+  </div>
+  <div class="nodata"><p>暂无数据</p></div>
+<!--选择弹窗--> 
+<!--地区-->
+<div class="cont-area">
+	<ul>
+		<li>全部</li>		
+	</ul>
+</div>
+<!--威胁-->
+<div class="cont-threat">
+	<ul>
+		<li class="active" onclick="leak0()">全部</li>
+		<li onclick="leak1()">高危</li>
+		<li onclick="leak2()">中危</li>
+		<li onclick="leak3()">低危</li>
+	</ul>
+</div>
+<!--处理-->
+<div class="cont-tool">
+	<ul>
+		<li class="active" onclick="states1()"><span>未处理</span><i id="untool"></i></li>
+		<li onclick="states2()"><span>处理中</span><i id="tooling"></i></li>
+		<li onclick="states3()"><span>已完成</span><i id="complete"></i></li>
+	</ul>
+</div>
+<div class="bg"></div>
+<div class="bg2"></div>
+<div class="bg3"></div>
+
+<script src="../../static/js/vue.min.js"></script>
+<script src="../../static/js/jquery-1.9.0.min.js"></script>
+	<script src="../../static/js/third/store.min.js"></script>
+  <script src="../../static/js/http2.js"></script>
+<script src="../../static/js/mui.min.js"></script>
+<script src="../../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../../static/js/dropload.min.js"></script>
+<script  src="../static/js/leak-pages.js"></script>
+<script src="../static/js/leak.js"></script>
+</body>
+</html>

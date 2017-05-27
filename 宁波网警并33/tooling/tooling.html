@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>处理进度</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/tooling.css"/>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">
+			<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+				<div>
+				处理进度
+			</div>
+		</div>
+		<!--竖线-->
+		<div class="line2"></div>
+    <div class="info">
+	<div class="info-main" v-cloak>
+
+		<div class="line"></div>
+
+		<ul>
+			<li v-for="(step, index) in steps">
+				<span>{{step.vusCljg || (step.cljg || '&nbsp;')}}</span>
+        <span v-show="!step.vusClsj && !step.clsj">&nbsp;</span>
+				<span v-show="!!step.vusClsj  || !!step.clsj">{{(step.vusClsj || step.clsj) | date('MM月dd日 hh:mm')}}</span>
+			</li>
+		</ul>
+
+	</div>
+<div class="lines"></div>
+    </div>
+
+  </div>
+<!-- built files will be auto injected -->
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/util.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/tooling.js"></script>
+</body>
+</html>

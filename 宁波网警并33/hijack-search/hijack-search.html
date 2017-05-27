@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>DNS劫持搜索</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+  <link rel="stylesheet" href="../static/css/dropload2.css">
+  <link rel="stylesheet" href="../static/css/dropfresh.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/hijack-search.css"/>
+
+</head>
+<body>
+	
+  <div id="app"> 	
+  	<div class="header">		
+			<form action="" method="post" onsubmit="searchData();return false;">
+				<input type="search" class="search" placeholder="请输入您要搜索的内容" maxlength="14"/>
+				<div class="x">×</div>
+			</form>		
+		</div>
+		<!--搜索-->
+		<div class="cancel" onclick="mui.back()">取消</div>
+		<!--选择-->
+		<div class="slt">
+			<div class="slt-lt">
+					<span>区域</span>
+					<img src="./img/triangle.png"/>		
+			</div>
+			
+			<div class="slt-rt">
+				<span>未处理</span>
+				<img src="./img/triangle.png"/>
+			</div>
+		</div>
+		<!--内容区-->		
+    <div class="info">
+    	<div class="outer" >
+    		<div class="inner">
+    			<div class="lists">   				
+		    		<ul>
+		    			<!--<li>
+		    				<div id="1">
+		    					<h1>浅谈时顶顶顶顶是的飞的飞af是fsaf</h1>
+		    				<div class="state">
+		    					<span>低危</span><span>处理中</span>
+		    				</div><br />
+		    				<h2 class="log">打发打发安抚打发发发生发生
+		    				打发打发安抚打发发发生发生123</h2>
+		    				<h3 class="net">2016-08-02</h3>
+		    				<h4>2017-03-06 18:11:11</h4>
+		    				</div>	    				
+		    			</li>
+		    			-->
+		
+		    		</ul>
+		    		<div class="nomore">没有更多数据</div>
+    			</div>
+    </div>
+   </div>   
+  </div>  
+  </div>
+  <div class="nodata"><p>暂无搜索结果</p></div>
+<!--选择弹窗--> 
+<!--地区-->
+<div class="cont-area">
+	<ul>
+		<li>全部</li>
+	</ul>
+</div>
+
+<!--处理-->
+<div class="cont-tool">
+	<ul>
+		<li class="active" onclick="statecom1()"><span>未处理</span></li>
+		<li onclick="statecom2()"><span>处理中</span></li>
+		<li onclick="statecom3()"><span>已完成</span></li>
+
+	</ul>
+</div>
+<div class="bg"></div>
+<div class="bg3"></div>
+
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+	<script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/dropload-search.js"></script>
+<script src="../static/js/layer.js"></script>
+<link rel="stylesheet" href="../static/js/skin/layer.css"/>
+<script  src="../static/js/hijack-search-pages.js"></script>
+<script src="../static/js/hijack-search.js"></script>
+</body>
+</html>

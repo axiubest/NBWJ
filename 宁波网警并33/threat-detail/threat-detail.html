@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+  <title>威胁情报-详情页</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/threat-detail.css"/>
+</head>
+<body>
+  <div id="app">
+  	<div class="header">			
+			<a onclick="mui.back()"><span class="rtn"></span><span class="rtn-text">返回</span></a>
+				<div>
+				威胁情报
+			</div>
+		</div>
+    <div class="info" v-cloak>
+    		<div>   			    		
+    				<h1>{{news_title}}</h1>
+    				<h2>{{publishDate}}</h2>
+    				<!--<img src="../static/img/bg_3.png"/>-->
+    				<p v-html="news_content"></p>
+    		</div>
+    </div>
+    
+  </div>
+<!-- built files will be auto injected -->
+<script src="../static/js/vue.min.js"></script>
+<script src="../static/js/jquery-1.9.0.min.js"></script>
+  <script src="../static/js/third/store.min.js"></script>
+  <script src="../static/js/util/http.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/mui.min.js"></script>
+<script src="../static/js/andriod.js"></script>
+<script src="../static/js/threat-detail.js"></script>
+</body>
+</html>

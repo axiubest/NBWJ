@@ -1,0 +1,108 @@
+html,body{height:100%;}
+.header{height:80px;background: #0e1020;text-align: center;
+line-height: 80px;font-size: 18px;color:#fff;}
+.rtn{width:11px;height:17px;position: absolute;top:42px;left:1em;z-index: 2222;}
+.header>a{float:left;font-size:14px;color:#fff;z-index: 2222;}
+.search{position: absolute;top:40px;left:1em;height:30px;line-height:30px;
+width:calc(~"100% - 50px - 1em");font-size:14px;
+background: url(../img/search-3.png) no-repeat #fff;text-indent: 30px;
+background-size:20px 20px;background-position:5px 5px;}
+input::-webkit-search-cancel-button{
+display: none;
+} 
+.x{width:16px;height:16px;border-radius:50%;background: #ccc;line-height: 16px;position:absolute;
+top:47px;display: none;font-size: 14px;
+right:4em;z-index: 3333;
+text-align: center;color:#fff;}
+.cancel{position:absolute;top:48px;right:0.7em;
+z-index: 1;color:#fff;font-size: 14px;}
+//选择框
+.slt{position: absolute;top:75px;width: 100%;left:0;
+border-bottom:1px solid #e5e5e5 ;height: 36px;}
+.slt-lt,.slt-rt,.slt-ct{float: left;width:33.33%;font-size:13px;
+line-height: 24px;height: 22px;margin-top:9px;
+text-align: center !important;border-right: 1px solid #cecece;
+box-sizing: border-box;
+}
+.slt-rt{border: none;}
+.slt img{width:8px;height:5px;position: relative;top:-2px}
+
+//内容
+.info{font-size:12px;color:#6b6b6b;line-height:1.8em;
+text-align: justify;position:absolute;height:calc(~"100% - 112px");
+top:112px;left:0;overflow-y: auto;width: 100%;}
+.info li{max-height:200px;border-bottom: 1px solid #e5e5e5;text-align:left;
+padding: 5px 0;width:100%;box-sizing: border-box;
+
+}
+
+.info h1{font-size:16px;color:#000;width:auto;float: left;
+line-height: 150%;width:100%;text-indent: 3%;
+overflow: hidden;white-space: nowrap;
+text-overflow: ellipsis;}
+.info h2,.info h3{box-sizing: border-box;padding-left:18px;
+width: 100%;overflow: hidden;white-space: nowrap;text-indent: 3%;
+text-overflow: ellipsis;line-height: 200%;}
+.info h2{padding-left:0;font-size:13px}
+.info h2 span{float: right;padding-right:3%}
+.addr{background: url(../img/icon_company.png) no-repeat;
+background-size:12px 12px;background-position: 3% 15px !important;
+border-top:1px dotted #E5E5E5;box-sizing: border-box;
+height:40px;line-height: 40px !important;margin-top:5px}
+.info p{color:#000;margin-left:3%}
+.info p span{float: left;}
+.info p span:nth-child(2n){padding-right:1em;text-indent: 0.5em;}
+.addr span{width:calc(~"100% - 135px") !important;overflow: hidden;white-space: nowrap;
+text-overflow: ellipsis;float:left;padding-right: 0;margin-left:0;
+text-indent:0}
+.addr p{float:left;width:auto;padding-right: 0;margin-left:0}
+//.info ul{border-top: 1px solid #e5e5e5;}
+.blue{color:#3d9dee}
+.red{color:red}
+.green{color:#00c46c}
+.info button{background: red;height:25px;line-height: 25px;width:50px;
+color:#fff;border-radius: 3px;float: left;margin:10px 3% 0 0;}
+.info button.none{background:#969696;}
+
+//背景
+.bg,.bg2,.bg3{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+top:120px;
+    left: 0;
+    height:calc(~"100% - 120px");
+
+
+}
+.cont-area,.cont-threat,.cont-tool{
+    display: none;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    min-height: 50px;
+    top:115px;
+    position: absolute;  
+    min-height: 50px;
+    background: #fff;
+}
+.cont-area ul li{padding:7px 5px;font-size:13px;min-width: 25.5%;
+float: left;border: 1px solid #e5e5e5;border-radius: 3px;
+margin:12px 0 0 3%;text-align: center;}
+.cont-area .active{border: 1px solid #ff8a00;}
+.cont-threat ul li,.cont-tool ul li{display: block;padding:15px 0 15px 30px;font-size:13px;
+border-bottom: 1px solid #e5e5e5;}
+.cont-threat .active,.cont-tool .active{color:#ff8a00;background: url(../img/gou.png) no-repeat;
+background-size:10px 10px;background-position: 10px 16px;}
+.cont-area ul li:last-child{margin-bottom: 12px;}
+.cont-tool i{float: right;padding-right: 20px;}
+.nodata{position:fixed;top:77px;left:0px;width:100%;height:calc(~"100% - 77px");
+background:#e5e5e5;font-size:18px;color:#8f8f8f;z-index: 1;text-align: center;
+display: none;}
+.nodata p{position:relative;top:calc(~"50% - 20px");}
+//#div1 div{-webkit-overflow-scrolling: touch;}
+.nomore{width:100%;font-size:14px;text-align: center;line-height: 40px;
+border-bottom: 1px solid #E5E5E5;display: none;}

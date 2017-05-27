@@ -1,0 +1,68 @@
+.box {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  width: 97%;
+  margin-left: 3%;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  background: url(../img/rtn-2.png) no-repeat;
+  background-position: 97% 14px;
+  background-size: 5px 12px;
+}
+.box span:last-child {
+  color: #343434;
+  float: right;
+  padding-right: 28px;
+  text-align: right;
+  width: calc(100% - 90px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.box span:first-child {
+  float: left;
+  color: #6b6b6b;
+  text-align: left;
+}
+.info{background: #fff;position: static;width:100%;
+float: left;margin-top:10px;border-bottom: 1px solid #e5e5e5;
+border-top: 1px solid #e5e5e5;
+}
+.top_bar .top_menu > li:nth-child(4) > a {
+  color: #59ea73;
+}
+.top_bar .top_menu > li:nth-child(1) > a {
+  color: #fff;
+}
+.top_menu li:last-child img{
+	width:16px !important;
+}
+.left-cir {
+	margin-top: 19px;
+	margin-left: -12px;display: none;
+}
+
+.cont {
+	position: absolute;top:45px;height:calc(100% - 90px);
+	overflow-y: auto;z-index: 1;width:100%;
+}
+.cont-info {
+	background:#eff4f7;
+/*position: fixed;bottom:45px;*/
+float:left;
+width:100%;
+}
+.login{
+	width:100%;text-align: center !important;margin:20px 0 20px 0;
+	border-top: 1px solid #e5e5e5;background: #fff;color:#ff5b45;
+	font-size:16px	
+}
+.info .box:last-child{
+	border: 0;
+}
+.header{z-index: 2;}
+.name p{color: #fff;font-size:14px}
+.name-nick{margin:10px}
+.name-rank{margin-bottom:35px}
+.name img{width:60px;height:60px}
